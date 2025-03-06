@@ -1,2 +1,0 @@
-# SteamAssist
-Possible SE project
