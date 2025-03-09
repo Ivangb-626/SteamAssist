@@ -15,12 +15,12 @@
 4. System verifies the validity of the steam ID
   -If verification fails, system goes back to step 2
   -If verification succeeds a new page appears with all his library steam games ordered by game length with the data from the game length provided on the side.
-5. If the user clicks oont the store button to the side of the games name, it takes them to the online steam shop page of the game
+5. If the user clicks onto the store button to the side of the games name, it takes them to the online steam shop page of the game
 
 
 ## Use Case 2: Log In
 
-**Primary Actor:** Anonymus user
+**Primary Actor:** Anonymous user
 **Secondary Actor:** System
 **Preconditions**
 -Has all the required software needed for the usage of the app installed
@@ -30,7 +30,7 @@
 2. New page appears asking for Steam login information.
 3. User inputs any valid Steam login information.
   -If verificaton fails, system goes back to step 2.
-  -If verification succeeds, the options that require login in are unlocked and the system stores (just during the execution on a temporal registry) the login information for future uses.
+  -If verification succeeds, the options that require logging in are unlocked and the system stores (just during the execution on a temporal registry) the login information for future uses.
 
 
 ## Use Case 3: Check your library games approximate length (LoggedIn)
@@ -66,7 +66,7 @@
 ### Main Flow:
 
 
-1. User presses the recommend games button(will be unlocked until login)
+1. User presses the recommend games button(will be locked until login)
 2. System shows a combo box with two options (games from inside the library and games from outside the library) and 2 radio buttons (games you have played the most in your lifetime or games you have played the most recently).
 3. User selects their preffered configuration and press the select button in the center bottom of the pane.
 4. System returns a list with the recommended games depending on:
