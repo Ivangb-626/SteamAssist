@@ -30,7 +30,7 @@
 2. System returns to the first interface(Step 1).
 
 
-## Use Case 2: Log In
+## Use Case 2: Log In/Out
 
 **Primary Actor:** Anonymous user
 **Secondary Actor:** System
@@ -38,11 +38,12 @@
 -Has all the required software needed for the usage of the app installed
 
 ### Main Flow:
-1. User presses the "Log In" button (Should be possitioned in the top right corner).
+1. If not logged, user presses the "Log In" button (Should be possitioned in the top right corner).
 2. New page appears asking for Steam login information.
 3. User inputs any valid Steam login information.
   -If verificaton fails, system goes back to step 2.
   -If verification succeeds, the options that require logging in are unlocked and the system stores (just during the execution on a temporal registry) the login information for future uses.
+4. The text of the button changes to "Log Out"
 
 ### Alternative Flows:
 
@@ -50,6 +51,11 @@
 - If during step 2 the user wants to return to step 1:
 1. User presses the arrow to the left button in the top left of the interface
 2. System returns to the first interface(Step 1).
+**A2: Log out**
+- If logged in:
+1. User presses "Log Out" button (The same button of Log In with the text changed).
+2. The main page is displayed.
+
 
 ## Use Case 3: Check your library games approximate length (LoggedIn)
 
