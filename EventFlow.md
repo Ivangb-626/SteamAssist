@@ -10,12 +10,24 @@
 
 ### Main Flow:
 1. User presses the HowLongToBeat button.
-2. New page appears asking for steam ID
-3. User inputs any valid Steam id
+2. New page appears asking for Steam ID
+3. User inputs any valid Steam ID
 4. System verifies the validity of the steam ID
   -If verification fails, system goes back to step 2
   -If verification succeeds a new page appears with all his library steam games ordered by game length with the data from the game length provided on the side.
 5. If the user clicks onto the store button to the side of the games name, it takes them to the online steam shop page of the game
+
+### Alternative Flows:
+**A1: Non public games**
+- If the inputted Steam ID has the games privacy settings not set as public::
+1. The interface shows an error message with an Accept button in the center bottom.
+2. User clicks the button.
+3. Interface returns to step 2
+
+**A2: Regret**
+- If during step 2 the user wants to return to step 1:
+1. User presses the arrow to the left button in the top left of the interface
+2. System returns to the first interface(Step 1).
 
 
 ## Use Case 2: Log In
@@ -32,6 +44,12 @@
   -If verificaton fails, system goes back to step 2.
   -If verification succeeds, the options that require logging in are unlocked and the system stores (just during the execution on a temporal registry) the login information for future uses.
 
+### Alternative Flows:
+
+**A1: Regret**
+- If during step 2 the user wants to return to step 1:
+1. User presses the arrow to the left button in the top left of the interface
+2. System returns to the first interface(Step 1).
 
 ## Use Case 3: Check your library games approximate length (LoggedIn)
 
@@ -48,10 +66,17 @@
 1. User presses the HowLongToBeat button.
 2. System inputs the users Steam ID to the HowLongToBeat input receiver. 
 3. Since the login was successful to begin with there shouldnt be any issues with it, but:
-  - System sends user back to first interface and notifies of the error
+  - If verification is rejected system sends user back to first interface and notifies of the error
   - If verification succeeds a new page appears with all his library steam games ordered by game length with the data from the game length provided on the side.
 4.1. If the user clicks in the title of any of the games it opens the steam library on the games site(If we manage to configure that via steamcmd)
 4.2. If the user clicks on the store button to the side of the games name, it takes them to the online steam shop page of the game
+
+### Alternative Flows:
+
+**A1: Regret**
+- If during step 4 the user wants to return to step 1:
+1. User presses the arrow to the left button in the top left of the interface
+2. System returns to the first interface(Step 1).
 
 ## Use Case 4: Recommend games depending on either games you have played the most or games you have played the most reciently (LoggedIn)
 
@@ -97,4 +122,9 @@
   - A button with the shops link to the game
 3.1 If the user clicks in the title of any of the games it opens the steam library on the games site(If we manage to configure that via steamcmd and the game is inside the library)
 3.2 If the user clicks on the store button to the side of the games name, it takes them to the online steam shop page of the game
+
+**A3: Regret**
+- If during step 2 the user wants to return to step 1:
+1. User presses the arrow to the left button in the top left of the interface
+2. System returns to the first interface(Step 1).
 
