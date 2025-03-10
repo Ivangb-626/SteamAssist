@@ -1,0 +1,64 @@
+@startuml SteamAssist
+
+left to right direction
+skinparam actorStyle stick
+
+actor "Anonymous User" as Anonymous
+actor "Logged In User" as LoggedIn
+
+rectangle "SteamAssist System" {
+  usecase "Log In" as UC1
+  usecase "Log Out" as UC2
+  
+  ' Anonymous user specific use cases
+  usecase "View How Long To Beat\n(Anonymous)" as UC3A
+  usecase "Get Game Recommendations\n(Anonymous)" as UC6A
+  usecase "Enter Steam ID" as UC4
+  
+  ' Logged in user specific use cases
+  usecase "View How Long To Beat\n(Logged In)" as UC3L
+  usecase "Get Game Recommendations\n(Logged In)" as UC6L
+  usecase "View Library Games" as UC7
+  
+  ' Shared functionality but accessed separately
+  usecase "See Game Completion Times" as UC5
+  usecase "Select Game Source" as UC8
+  usecase "View Games By Play Time" as UC9
+  usecase "View Recently Played Games" as UC10
+  usecase "See Friend Recommendations" as UC11
+  usecase "Apply Filters" as UC12
+  usecase "Access Game Store" as UC13
+}
+
+' Anonymous user connections
+Anonymous --> UC1
+Anonymous --> UC3A
+Anonymous --> UC6A
+
+' Logged in user connections
+LoggedIn --> UC2
+LoggedIn --> UC3L
+LoggedIn --> UC6L
+LoggedIn --> UC7
+
+' Include relationships for anonymous users
+UC3A ..> UC4 : <<include>>
+UC3A ..> UC5 : <<include>>
+UC6A ..> UC8 : <<include>>
+
+' Include relationships for logged in users
+UC3L ..> UC5 : <<include>>
+UC6L ..> UC8 : <<include>>
+UC7 ..> UC5 : <<include>>
+
+' Shared include relationships
+UC8 ..> UC9 : <<include>>
+UC8 ..> UC10 : <<include>>
+
+' Extend relationships
+UC6A ..> UC13 : <<extend>>
+UC6L ..> UC11 : <<extend>>
+UC6L ..> UC12 : <<extend>>
+UC6L ..> UC13 : <<extend>>
+
+@enduml
