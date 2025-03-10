@@ -19,7 +19,7 @@
 
 ### Alternative Flows:
 **A1: Non public games**
-- If the inputted Steam ID has the games privacy settings not set as public::
+- If the inputted Steam ID has the games privacy settings not set as public:
 1. The interface shows an error message with an Accept button in the center bottom.
 2. User clicks the button.
 3. Interface returns to step 2
