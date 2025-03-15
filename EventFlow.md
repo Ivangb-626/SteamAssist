@@ -24,6 +24,12 @@
 2. User clicks the button.
 3. Interface returns to step 2
 
+**A2: Regret**
+- If during step 2 the user wants to return to step 1:
+1. User presses the arrow to the left button in the top left of the interface
+2. System returns to the first interface(Step 1).
+
+
 ## Use Case 2: Log In/Out
 
 **Primary Actor:** Anonymous user
@@ -41,7 +47,11 @@
 
 ### Alternative Flows:
 
-**A1: Log out**
+**A1: Regret**
+- If during step 2 the user wants to return to step 1:
+1. User presses the arrow to the left button in the top left of the interface
+2. System returns to the first interface(Step 1).
+**A2: Log out**
 - If logged in:
 1. User presses "Log Out" button (The same button of Log In with the text changed).
 2. The main page is displayed.
@@ -67,6 +77,12 @@
 4.1. If the user clicks in the title of any of the games it opens the steam library on the games site(If we manage to configure that via steamcmd)
 4.2. If the user clicks on the store button to the side of the games name, it takes them to the online steam shop page of the game
 
+### Alternative Flows:
+
+**A1: Regret**
+- If during step 4 the user wants to return to step 1:
+1. User presses the arrow to the left button in the top left of the interface
+2. System returns to the first interface(Step 1).
 
 ## Use Case 4: Recommend games depending on either games you have played the most or games you have played the most reciently (LoggedIn)
 
@@ -113,3 +129,7 @@
 3.1 If the user clicks in the title of any of the games it opens the steam library on the games site(If we manage to configure that via steamcmd and the game is inside the library)
 3.2 If the user clicks on the store button to the side of the games name, it takes them to the online steam shop page of the game
 
+**A3: Regret**
+- If during step 2 the user wants to return to step 1:
+1. User presses the arrow to the left button in the top left of the interface
+2. System returns to the first interface(Step 1).
