@@ -1,0 +1,72 @@
+@startuml "Steam Game Library Application Domain Model"
+
+skinparam classAttributeIconSize 0
+skinparam monochrome true
+skinparam shadowing false
+skinparam linetype ortho
+
+class User {
+  steamID: String
+  username: String
+  loginStatus: Boolean
+}
+
+class Game {
+  gameID: String
+  title: String
+  genre: String
+  completionLength: Duration
+  storePageURL: String
+  libraryPageURL: String
+}
+
+class Library {
+  isPublic: Boolean
+}
+
+class PlayStatistic {
+  hoursPlayed: Float
+  lastPlayedDate: Date
+  recentPlayTime: Float
+}
+
+class Recommendation {
+  priorityScore: Float
+  recommendationType: String
+}
+
+class Review {
+  content: String
+  date: Date
+}
+
+class GenrePreference {
+  genre: String
+  priorityScore: Float
+  isRecentlyPlayed: Boolean
+}
+
+class Filter {
+  includeLibraryGames: Boolean
+  includeOutsideLibraryGames: Boolean
+  useLifetimePlaytime: Boolean
+  useRecentPlaytime: Boolean
+  selectedGenres: String
+  showDiscountedOnly: Boolean
+}
+
+User "1" -- "1" Library : owns >
+User "1" -- "0..*" GenrePreference : has >
+User "1" -- "0..*" Filter : creates >
+User "1" -- "0..*" Review : writes >
+User "1" -- "0..*" User : friends with >
+
+Library "1" -- "0..*" Game : contains >
+
+Game "1" -- "0..*" PlayStatistic : tracked by >
+Game "1" -- "0..*" Recommendation : generates >
+Game "1" -- "0..*" Review : receives >
+
+Filter "1" -- "0..*" Recommendation : produces >
+
+@enduml
