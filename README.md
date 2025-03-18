@@ -17,6 +17,7 @@ FIRST SPLIT:
   UI Mockup
 -Create the sign-in and sign-up use cases
 -Create the howlongtobeat usecase
--
+-Personalize the backlog section (in order to write the hours invested, whether we have started with an assigment...)
+-Create a Discord server to share our ideas of the project (presentation, coding, git...)
 
                                   (brief explanation of the work for the first sprint)
