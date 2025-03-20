@@ -1,4 +1,4 @@
-COPILOT FANBOYS🥵🥵🥵🥵🥵       (name of the team)
+COPILOT FANBOYS (name of the team)
 
 Cherqui Madarieta, Yunes
 Elortondo Garro, Oier
