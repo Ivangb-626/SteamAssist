@@ -1,9 +1,13 @@
 COPILOT FANBOYS (name of the team)
 
-Cherqui Madarieta, Yunes
+Cherqui Madarieta, Yunes 
+
 Elortondo Garro, Oier
+
 Ituarte Arroitajauregi, Gorka
+
 Zunzunegui Mintegui, Alejandro
+
 Gonzalez Blazquez, Ivan
                                   (team members)
 
