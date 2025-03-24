@@ -4,7 +4,43 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fbec34d-c4af-49a8-9b8b-3891287cdfc6" name="Changes" comment="Update README.md" />
+    <list default="true" id="4fbec34d-c4af-49a8-9b8b-3891287cdfc6" name="Changes" comment="Update README.md">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Req.Analysis/Domain_model.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Req.Analysis/Domain_model.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Req.Analysis/Domain_model_prompt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Req.Analysis/EventFlow.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Req.Analysis/Use-case Claude.ia prompt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Req.Analysis/Use-case.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Req.Analysis/Use-case.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI_MOCKUP/use_case_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI_MOCKUP/use_case_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI_MOCKUP/use_case_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI_MOCKUP/use_case_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI_MOCKUP/use_case_4_A1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI_MOCKUP/use_case_4_A2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernateTemplate-Fix/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernateTemplate-Fix/config.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernateTemplate-Fix/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernateTemplate-Fix/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernateTemplate-Fix/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernateTemplate-Fix/src/main/java/eus/ehu/template/businessLogic/BlFacade.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernateTemplate-Fix/src/main/java/eus/ehu/template/businessLogic/BlFacadeImplementation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernateTemplate-Fix/src/main/java/eus/ehu/template/configuration/Config.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernateTemplate-Fix/src/main/java/eus/ehu/template/configuration/UtilDate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernateTemplate-Fix/src/main/java/eus/ehu/template/dataAccess/DataAccess.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernateTemplate-Fix/src/main/java/eus/ehu/template/dataAccess/H2WebLauncher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernateTemplate-Fix/src/main/java/eus/ehu/template/domain/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernateTemplate-Fix/src/main/java/eus/ehu/template/ui/LoginUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernateTemplate-Fix/src/main/java/eus/ehu/template/ui/MainController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernateTemplate-Fix/src/main/java/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernateTemplate-Fix/src/main/resources/bootstrapfx.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernateTemplate-Fix/src/main/resources/eus/ehu/template/ui/login.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernateTemplate-Fix/src/main/resources/hibernate.cfg.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hibernateTemplate-Fix/src/main/resources/log4j2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wording.md" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +53,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -43,13 +80,18 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/5000p/OneDrive/Escritorio/2.segundo cuatri/SE/Workspace/SteamAssist",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -84,6 +126,13 @@
       <updated>1742574059786</updated>
       <workItem from="1742574061096" duration="756000" />
       <workItem from="1742648642525" duration="227000" />
+      <workItem from="1742730438480" duration="375000" />
+      <workItem from="1742814119016" duration="103000" />
+      <workItem from="1742814343526" duration="59000" />
+      <workItem from="1742814465173" duration="705000" />
+      <workItem from="1742815187988" duration="469000" />
+      <workItem from="1742815949794" duration="238000" />
+      <workItem from="1742816219808" duration="52000" />
     </task>
     <task id="LOCAL-00001" summary="Update README.md">
       <option name="closed" value="true" />
