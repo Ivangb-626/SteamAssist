@@ -4,42 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fbec34d-c4af-49a8-9b8b-3891287cdfc6" name="Changes" comment="Update README.md">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+    <list default="true" id="4fbec34d-c4af-49a8-9b8b-3891287cdfc6" name="Changes" comment="refactored everything to match the expected structure">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Req.Analysis/Domain_model.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Req.Analysis/Domain_model.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Req.Analysis/Domain_model_prompt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Req.Analysis/EventFlow.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Req.Analysis/Use-case Claude.ia prompt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Req.Analysis/Use-case.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Req.Analysis/Use-case.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI_MOCKUP/use_case_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI_MOCKUP/use_case_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI_MOCKUP/use_case_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI_MOCKUP/use_case_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI_MOCKUP/use_case_4_A1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI_MOCKUP/use_case_4_A2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernateTemplate-Fix/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernateTemplate-Fix/config.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernateTemplate-Fix/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernateTemplate-Fix/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernateTemplate-Fix/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernateTemplate-Fix/src/main/java/eus/ehu/template/businessLogic/BlFacade.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernateTemplate-Fix/src/main/java/eus/ehu/template/businessLogic/BlFacadeImplementation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernateTemplate-Fix/src/main/java/eus/ehu/template/configuration/Config.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernateTemplate-Fix/src/main/java/eus/ehu/template/configuration/UtilDate.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernateTemplate-Fix/src/main/java/eus/ehu/template/dataAccess/DataAccess.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernateTemplate-Fix/src/main/java/eus/ehu/template/dataAccess/H2WebLauncher.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernateTemplate-Fix/src/main/java/eus/ehu/template/domain/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernateTemplate-Fix/src/main/java/eus/ehu/template/ui/LoginUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernateTemplate-Fix/src/main/java/eus/ehu/template/ui/MainController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernateTemplate-Fix/src/main/java/module-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernateTemplate-Fix/src/main/resources/bootstrapfx.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernateTemplate-Fix/src/main/resources/eus/ehu/template/ui/login.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernateTemplate-Fix/src/main/resources/hibernate.cfg.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernateTemplate-Fix/src/main/resources/log4j2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wording.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +19,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -76,37 +41,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/5000p/OneDrive/Escritorio/2.segundo cuatri/SE/Workspace/SteamAssist",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/5000p/OneDrive/Escritorio/2.segundo cuatri/SE/Workspace/SteamAssist&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="SteamAssist" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="SteamAssist" />
-      <option name="filePath" />
-      <method v="2" />
-    </configuration>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\5000p\OneDrive\Escritorio\2.segundo cuatri\SE\Workspace\SteamAssist\docs\UI_MOCKUP" />
+    </key>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -132,7 +89,7 @@
       <workItem from="1742814465173" duration="705000" />
       <workItem from="1742815187988" duration="469000" />
       <workItem from="1742815949794" duration="238000" />
-      <workItem from="1742816219808" duration="52000" />
+      <workItem from="1742816219808" duration="930000" />
     </task>
     <task id="LOCAL-00001" summary="Update README.md">
       <option name="closed" value="true" />
@@ -142,7 +99,31 @@
       <option name="project" value="LOCAL" />
       <updated>1742574214076</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="refactored everything to match the expected structure">
+      <option name="closed" value="true" />
+      <created>1742816310242</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1742816310242</updated>
+    </task>
+    <task id="LOCAL-00003" summary="refactored everything to match the expected structure">
+      <option name="closed" value="true" />
+      <created>1742816345658</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1742816345658</updated>
+    </task>
+    <task id="LOCAL-00004" summary="refactored everything to match the expected structure">
+      <option name="closed" value="true" />
+      <created>1742816415590</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1742816415590</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,6 +181,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update README.md" />
+    <MESSAGE value="refactored everything to match the expected structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactored everything to match the expected structure" />
   </component>
 </project>
