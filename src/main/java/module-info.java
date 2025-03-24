@@ -7,6 +7,7 @@ module eus.ehu.template {
     requires org.apache.logging.log4j;
 
     requires com.h2database;
+    requires org.jsoup;
 
     opens eus.ehu.template.domain to org.hibernate.orm.core;
     opens eus.ehu.template.ui to javafx.fxml;

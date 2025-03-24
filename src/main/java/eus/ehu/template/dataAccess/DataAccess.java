@@ -86,6 +86,14 @@ public class DataAccess {
       return null;
     }
   }
+
+  public void signUp(String username, String password, String role) {
+    db.getTransaction().begin();
+    User user = new User(username, password, role);
+    db.persist(user);
+    db.getTransaction().commit();
+  }
+
   public void initializeDB() {
     this.reset();
 
