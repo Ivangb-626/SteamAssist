@@ -63,4 +63,43 @@ public class MainController {
             alert.showAndWait();
         }
     }
+
+    @FXML
+    void signup(ActionEvent event) {
+
+        String user = username.getText();
+        String pass = password.getText();
+        String role = roleComboBox.getValue();
+
+        if (user.isEmpty() || pass.isEmpty() || role == null) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("All fields are mandatory!");
+            alert.showAndWait();
+            return;
+        }
+
+        BlFacadeImplementation bl = BlFacadeImplementation.getInstance();
+
+        bl.signUp(user, pass, role);
+
+        User loggedInUser = bl.login(user, pass, role);
+
+        if (loggedInUser != null) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Success");
+            alert.setHeaderText(null);
+            alert.setContentText("Signup successful");
+            alert.showAndWait();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Signup failed. Please try again");
+            alert.showAndWait();
+        }
+    }
+
+
 }
