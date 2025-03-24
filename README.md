@@ -1,36 +1,29 @@
-COPILOT FANBOYS (name of the team)
+# COPILOT FANBOYS
 
-Cherqui Madarieta, Yunes 
+## Team Members:
+- **Cherqui Madarieta, Yunes**  
+- **Elortondo Garro, Oier**  
+- **Ituarte Arroitajauregi, Gorka**  
+- **Zunzunegui Mintegui, Alejandro**  
+- **Gonzalez Blazquez, Ivan**  
 
-Elortondo Garro, Oier
+---
 
-Ituarte Arroitajauregi, Gorka
+## FIRST SPLIT:
 
-Zunzunegui Mintegui, Alejandro
-
-Gonzalez Blazquez, Ivan
-                                  (team members)
-
-FIRST SPLIT:
-
--Wording (to put the ideas of the project into a place)
-
--Create the Github repo and share it with each team member
-
--Create the requirements analysis for the project and put it in Req.Analysis folder
-
-  Use Case
-  Event Flow
-  Domain Model
-  UI Mockup
-  
--Create the sign-in and sign-up use cases
-
--Create the howlongtobeat usecase
-
--Personalize the backlog section (in order to write the hours invested, whether we have started with an assigment...)
-
--Create a Discord server to share our ideas of the project (presentation, coding, git...)
-
-
-                                  (brief explanation of the work for the first sprint)
+### Tasks:
+- **Wording**: Organize and structure the ideas of the project.  
+- **Create GitHub Repository**: Set up and share the repository with all team members.  
+- **Requirements Analysis**: Develop documentation and store it in the `Req.Analysis` folder, including:  
+  - Use Case  
+  - Event Flow  
+  - Domain Model  
+  - UI Mockup  
+- **Develop Use Cases**:  
+  - Sign-in & Sign-up functionality  
+  - "HowLongToBeat" use case  
+- **Backlog Customization**:  
+  - Track hours invested.  
+  - Note assignment progress.  
+- **Create Discord Server**:  
+  - Facilitate team communication (presentation, coding, Git management, etc.).  
