@@ -4,6 +4,8 @@ import eus.ehu.template.businessLogic.BlFacadeImplementation;
 import eus.ehu.template.domain.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.PasswordField;
@@ -22,6 +24,7 @@ public class MainController {
     @FXML
     private TextField username;
     private BlFacadeImplementation bl;
+    private static String LoginID;
 
     @FXML
     public void initialize() {
@@ -47,14 +50,16 @@ public class MainController {
 
         BlFacadeImplementation bl = BlFacadeImplementation.getInstance();
        // bl.open();
-        User loggedInUser = bl.login(user, pass, role);
+        User loggedInUser = bl.login(user, pass);
        // bl.close();
         if (loggedInUser != null) {
+            LoginID=user;
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Success");
             alert.setHeaderText(null);
             alert.setContentText("Login successful");
             alert.showAndWait();
+
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
@@ -82,9 +87,9 @@ public class MainController {
 
         BlFacadeImplementation bl = BlFacadeImplementation.getInstance();
 
-        bl.signUp(user, pass, role);
+        bl.signUp(user, pass);
 
-        User loggedInUser = bl.login(user, pass, role);
+        User loggedInUser = bl.login(user, pass);
 
         if (loggedInUser != null) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -99,6 +104,11 @@ public class MainController {
             alert.setContentText("Signup failed. Please try again");
             alert.showAndWait();
         }
+    }
+
+    @FXML
+    void logOut(ActionEvent event) {
+        LoginID=null;
     }
 
 

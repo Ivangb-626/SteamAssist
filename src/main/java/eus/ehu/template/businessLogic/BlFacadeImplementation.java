@@ -28,17 +28,17 @@ public class BlFacadeImplementation implements BlFacade {
         if (initialize)
             dbManager.initializeDB();
     }
-    public User login(String username, String password, String role) {
+    public User login(String username, String password) {
         dbManager.open();
-        User user = dbManager.login(username, password, role);
+        User user = dbManager.login(username, password);
         System.out.println("User logged in: " + user);
         dbManager.close();
         return user;
     }
 
-    public void signUp(String username, String password, String role) {
+    public void signUp(String username, String password) {
         dbManager.open();
-        dbManager.signUp(username, password, role);
+        dbManager.signUp(username, password);
         System.out.println("User signed up: " + username);
         dbManager.close();
     }

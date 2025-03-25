@@ -73,13 +73,12 @@ public class DataAccess {
   db.createQuery("DELETE FROM User").executeUpdate();
     db.getTransaction().commit();
   }
-  public User login(String username, String password, String role) {
+  public User login(String username, String password) {
     try {
       TypedQuery<User> query = db.createQuery(
-              "SELECT u FROM User u WHERE u.userName = :username AND u.password = :password AND u.role = :role", User.class);
+              "SELECT u FROM User u WHERE u.userName = :username AND u.password = :password", User.class);
       query.setParameter("username", username);
       query.setParameter("password", password);
-      query.setParameter("role", role);
       return query.getSingleResult();
     } catch (NoResultException e) {
       System.out.println("User not found");
@@ -87,9 +86,9 @@ public class DataAccess {
     }
   }
 
-  public void signUp(String username, String password, String role) {
+  public void signUp(String username, String password) {
     db.getTransaction().begin();
-    User user = new User(username, password, role);
+    User user = new User(username, password);
     db.persist(user);
     db.getTransaction().commit();
   }
@@ -101,15 +100,15 @@ public class DataAccess {
       db.getTransaction().begin();
 
       // Create test users with different roles
-      User teacher1 = new User("john.smith", "pass123", "Teacher");
-      User teacher2 = new User("mary.jones", "pass456", "Teacher");
+      User teacher1 = new User("john.smith", "pass123");
+      User teacher2 = new User("mary.jones", "pass456");
 
-      User student1 = new User("alex.brown", "student123", "Student");
-      User student2 = new User("sarah.wilson", "student456", "Student");
-      User student3 = new User("mike.davis", "student789", "Student");
+      User student1 = new User("alex.brown", "student123");
+      User student2 = new User("sarah.wilson", "student456");
+      User student3 = new User("mike.davis", "student789");
 
-      User admin1 = new User("admin.main", "admin123", "Administrative");
-      User admin2 = new User("jane.doe", "admin456", "Administrative");
+      User admin1 = new User("admin.main", "admin123");
+      User admin2 = new User("jane.doe", "admin456");
 
       // Persist all users
       db.persist(teacher1);
