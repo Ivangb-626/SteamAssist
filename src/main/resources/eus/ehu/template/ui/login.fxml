@@ -8,12 +8,14 @@
 <?import javafx.scene.text.Font?>
 
 
+<?import javafx.scene.layout.StackPane?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../../../bootstrapfx.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eus.ehu.template.ui.MainController">
    <Button layoutX="54.0" layoutY="321.0" mnemonicParsing="false" onAction="#login" prefHeight="46.0" prefWidth="182.0" style="-fx-background-color: green;" styleClass="badge" stylesheets="@../../../../bootstrapfx.css" text="Login" />
    <TextField fx:id="username" layoutX="85.0" layoutY="144.0" prefHeight="26.0" prefWidth="421.0" promptText="Choose a username" styleClass="kbd" />
    <Button layoutX="247.0" layoutY="262.0" onAction="#togglePasswordVisibility" style="-fx-background-color: blue;" styleClass="badge" stylesheets="@../../../../bootstrapfx.css" text="Show Password" />
    <PasswordField fx:id="password" layoutX="85.0" layoutY="217.0" prefHeight="26.0" prefWidth="421.0" promptText="Enter your password" styleClass="kbd" />
-   <TextField fx:id="passwordTextField" layoutX="85.0" layoutY="262.0" prefHeight="26.0" prefWidth="421.0" promptText="Enter your password" styleClass="kbd" visible="false" />
+   <TextField fx:id="passwordTextField" layoutX="85.0" layoutY="216.0" prefHeight="26.0" prefWidth="421.0" promptText="Enter your password" styleClass="kbd" visible="false" />
+
    <TextField fx:id="idget" layoutX="85.0" layoutY="39.0" prefHeight="26.0" prefWidth="421.0" promptText="Enter your Steam ID (17 digits)" styleClass="kbd" stylesheets="@../../../../bootstrapfx.css" />
    <Label layoutX="244.0" layoutY="52.0">
       <font>
@@ -31,4 +33,5 @@
          <Font name="Bell MT" size="11.0" />
       </font>
    </Label>
+
 </AnchorPane>
