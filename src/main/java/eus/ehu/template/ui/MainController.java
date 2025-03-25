@@ -23,17 +23,19 @@ public class MainController {
 
     @FXML
     private TextField idget;
+
     @FXML
     private Label clickableLabel;
     @FXML
     private TextField passwordTextField;
 
-
+    private static String LoginID;
 
     @FXML
     public void initialize() {
 
     }
+
     @FXML
     public void togglePasswordVisibility(ActionEvent event) {
         if (password.isVisible()) {
@@ -55,12 +57,11 @@ public class MainController {
             e.printStackTrace();
         }
     }
+
     @FXML
     public void handleMouseEnter(MouseEvent event) {
         clickableLabel.setStyle("-fx-text-fill: blue; -fx-underline: true;");
         clickableLabel.setCursor(Cursor.HAND);
-    @FXML
-    public void initialize() {
     }
 
     @FXML
@@ -68,6 +69,7 @@ public class MainController {
         clickableLabel.setStyle("-fx-text-fill: black; -fx-underline: false;");
         clickableLabel.setCursor(Cursor.DEFAULT);
     }
+
     @FXML
     void login(ActionEvent event) {
         String user = username.getText();

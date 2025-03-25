@@ -17,6 +17,6 @@ public interface BlFacade  {
      * @param password the password
      * @return User if login successful, null otherwise
      */
-    User login(String username, String password);
+    User login(String username, String password, String id);
 
 }
