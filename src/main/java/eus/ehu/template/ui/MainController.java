@@ -144,24 +144,31 @@ public class MainController {
 
         BlFacadeImplementation bl = BlFacadeImplementation.getInstance();
 
+        if (!bl.userExists(user)) {
+            bl.signUp(user, pass, id);
 
-        bl.signUp(user, pass, id);
+            User loggedInUser = bl.login(user, pass, id);
 
-        User loggedInUser = bl.login(user, pass, id);
-
-        if (loggedInUser != null) {
-            steamUsername=user;
-            //steampassword=pass;
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Success");
-            alert.setHeaderText(null);
-            alert.setContentText("Signup successful");
-            alert.showAndWait();
+            if (loggedInUser != null) {
+                steamUsername = user;
+                //steampassword=pass;
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Success");
+                alert.setHeaderText(null);
+                alert.setContentText("Signup successful");
+                alert.showAndWait();
+            } else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Signup failed. Please try again");
+                alert.showAndWait();
+            }
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText(null);
-            alert.setContentText("Signup failed. Please try again");
+            alert.setContentText("User already exists");
             alert.showAndWait();
         }
     }

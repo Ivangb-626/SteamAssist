@@ -19,4 +19,5 @@ public interface BlFacade  {
      */
     User login(String username, String password, String id);
 
+    boolean userExists(String user);
 }
