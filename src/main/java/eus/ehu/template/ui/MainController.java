@@ -4,6 +4,8 @@ import eus.ehu.template.businessLogic.BlFacadeImplementation;
 import eus.ehu.template.domain.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -57,6 +59,8 @@ public class MainController {
     public void handleMouseEnter(MouseEvent event) {
         clickableLabel.setStyle("-fx-text-fill: blue; -fx-underline: true;");
         clickableLabel.setCursor(Cursor.HAND);
+    @FXML
+    public void initialize() {
     }
 
     @FXML
@@ -68,8 +72,10 @@ public class MainController {
     void login(ActionEvent event) {
         String user = username.getText();
         String pass = password.getText();
+
         String id = idget.getText();
         if (user.isEmpty() || pass.isEmpty()|| id.isEmpty()) {
+
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText(null);
@@ -92,11 +98,13 @@ public class MainController {
         User loggedInUser = bl.login(user, pass, id);
        // bl.close();
         if (loggedInUser != null) {
+            LoginID=user;
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Success");
             alert.setHeaderText(null);
             alert.setContentText("Login successful");
             alert.showAndWait();
+
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
@@ -132,6 +140,7 @@ public class MainController {
 
         BlFacadeImplementation bl = BlFacadeImplementation.getInstance();
 
+
         bl.signUp(user, pass, id);
 
         User loggedInUser = bl.login(user, pass, id);
@@ -149,6 +158,11 @@ public class MainController {
             alert.setContentText("Signup failed. Please try again");
             alert.showAndWait();
         }
+    }
+
+    @FXML
+    void logOut(ActionEvent event) {
+        LoginID=null;
     }
 
 

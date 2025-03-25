@@ -22,20 +22,15 @@ public class User {
     private String password;
 
 
-    @Column(nullable = false)
-    private String role;
-
-
     // Default constructor
     public User() {
     }
 
 
     // Constructor with fields
-    public User(String userName, String password, String role) {
+    public User(String userName, String password) {
         this.userName = userName;
         this.password = password;
-        this.role = role;
     }
 
 
@@ -69,23 +64,11 @@ public class User {
         this.password = password;
     }
 
-
-    public String getRole() {
-        return role;
-    }
-
-
-    public void setRole(String role) {
-        this.role = role;
-    }
-
-
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
                 ", userName='" + userName + '\'' +
-                ", role='" + role + '\'' +
                 '}';
     }
 }
