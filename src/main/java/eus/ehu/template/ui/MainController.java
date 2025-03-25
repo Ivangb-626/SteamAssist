@@ -28,8 +28,6 @@ public class MainController {
 
     @FXML
     public void initialize() {
-        roleComboBox.getItems().addAll("Teacher", "Student", "Administrative");
-        roleComboBox.setPromptText("Select Role");
         bl = BlFacadeImplementation.getInstance();
     }
 
@@ -37,9 +35,8 @@ public class MainController {
     void login(ActionEvent event) {
         String user = username.getText();
         String pass = password.getText();
-        String role = roleComboBox.getValue();
 
-        if (user.isEmpty() || pass.isEmpty() || role == null) {
+        if (user.isEmpty() || pass.isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText(null);
@@ -74,9 +71,8 @@ public class MainController {
 
         String user = username.getText();
         String pass = password.getText();
-        String role = roleComboBox.getValue();
 
-        if (user.isEmpty() || pass.isEmpty() || role == null) {
+        if (user.isEmpty() || pass.isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText(null);

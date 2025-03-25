@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="579183d6-9306-457f-be7d-f36a0e4386d0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="579183d6-9306-457f-be7d-f36a0e4386d0" name="Changes" comment="Add LoginID and eliminate role">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/UI_MOCKUP/3. How Long To Beat (Logged in).png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/UI_MOCKUP/3. How Long To Beat (Logged in).png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eus/ehu/template/businessLogic/BlFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eus/ehu/template/businessLogic/BlFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eus/ehu/template/businessLogic/BlFacadeImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eus/ehu/template/businessLogic/BlFacadeImplementation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eus/ehu/template/dataAccess/DataAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eus/ehu/template/dataAccess/DataAccess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eus/ehu/template/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eus/ehu/template/domain/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eus/ehu/template/ui/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eus/ehu/template/ui/MainController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,9 +79,38 @@
       <workItem from="1742831851663" duration="7999000" />
       <workItem from="1742891046425" duration="305000" />
     </task>
+    <task id="LOCAL-00001" summary="Add LoginID and eliminate role">
+      <option name="closed" value="true" />
+      <created>1742909566092</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1742909566092</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="9fae7677-9fdb-4be6-81d9-19d7d82679e9" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="9fae7677-9fdb-4be6-81d9-19d7d82679e9">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add LoginID and eliminate role" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add LoginID and eliminate role" />
   </component>
 </project>
