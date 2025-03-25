@@ -49,4 +49,11 @@ public class BlFacadeImplementation implements BlFacade {
     public void close() {
         dbManager.close();
     }
+
+    public boolean userExists(String user) {
+        dbManager.open();
+        boolean exists = dbManager.userExists(user);
+        dbManager.close();
+        return exists;
+    }
 }

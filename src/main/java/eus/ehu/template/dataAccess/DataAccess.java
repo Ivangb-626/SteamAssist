@@ -142,4 +142,16 @@ public class DataAccess {
     // Do not close the EntityManagerFactory here to reuse it between operations
   }
 
+    public boolean userExists(String user) {
+        try {
+            TypedQuery<User> query = db.createQuery(
+                    "SELECT u FROM User u WHERE u.userName = :username", User.class);
+            query.setParameter("username", user);
+            query.getSingleResult();
+            return true;
+        } catch (NoResultException e) {
+            System.out.println("User not found");
+            return false;
+        }
+    }
 }
