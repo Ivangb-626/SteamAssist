@@ -28,7 +28,8 @@ public class BlFacadeImplementation implements BlFacade {
         if (initialize)
             dbManager.initializeDB();
     }
-    public User login(String username, String password, String id) {
+
+    public User login(String username, String password) {
         dbManager.open();
         User user = dbManager.login(username, password);
         System.out.println("User logged in: " + user);
@@ -36,12 +37,13 @@ public class BlFacadeImplementation implements BlFacade {
         return user;
     }
 
-    public void signUp(String username, String password, String id) {
+    public void signUp(String username, String password) {
         dbManager.open();
         dbManager.signUp(username, password);
         System.out.println("User signed up: " + username);
         dbManager.close();
     }
+
     public void open() {
         dbManager.open();
     }

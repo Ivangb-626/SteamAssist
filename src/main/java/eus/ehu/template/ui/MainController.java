@@ -1,183 +1,88 @@
 package eus.ehu.template.ui;
 
-import eus.ehu.template.businessLogic.BlFacadeImplementation;
-import eus.ehu.template.domain.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.Cursor;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class MainController {
 
     @FXML
-    private PasswordField password;
+    private Button add_acounts_btn;
 
     @FXML
-    private TextField username;
+    private Button login_bttn;
 
     @FXML
-    private TextField idget;
+    private Label li_confirm;
 
-    @FXML
-    private Label clickableLabel;
-    @FXML
-    private TextField passwordTextField;
-
-    private static String steamUsername;
-    //private static String steampassword;
+    private boolean isLoggedIn = false;
 
     @FXML
     public void initialize() {
+        updateUI();
+    }
 
+    public void updateLoginStatus(String message, String color) {
+        li_confirm.setText(message);
+        li_confirm.setStyle("-fx-text-fill: " + color + ";");
     }
 
     @FXML
-    public void togglePasswordVisibility(ActionEvent event) {
-        if (password.isVisible()) {
-            passwordTextField.setText(password.getText());
-            password.setVisible(false);
-            passwordTextField.setVisible(true);
+    void handleLoginButton(ActionEvent event) {
+        if (isLoggedIn) {
+            // Handle logout
+            setLoggedIn(false);
+            li_confirm.setText("");
         } else {
-            password.setText(passwordTextField.getText());
-            passwordTextField.setVisible(false);
-            password.setVisible(true);
+            showLogin(event);
         }
     }
-    @FXML
-    public void handleLabelClick(MouseEvent event) {
-        String url = clickableLabel.getText();
+
+    private void showLogin(ActionEvent event) {
         try {
-            java.awt.Desktop.getDesktop().browse(new java.net.URI(url));
-        } catch (Exception e) {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("login.fxml"));
+            Scene loginScene = new Scene(fxmlLoader.load());
+            Stage stage = new Stage();
+            stage.setScene(loginScene);
+            stage.setTitle("SteamAssist-Login");
+            stage.show();
+
+            // Pass the main controller to the login controller
+            LogIn_SignIn_Controller loginController = fxmlLoader.getController();
+            loginController.setMainController(this);
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    @FXML
-    public void handleMouseEnter(MouseEvent event) {
-        clickableLabel.setStyle("-fx-text-fill: blue; -fx-underline: true;");
-        clickableLabel.setCursor(Cursor.HAND);
+    public void setLoggedIn(boolean loggedIn) {
+        isLoggedIn = loggedIn;
+        updateUI();
+    }
+
+    private void updateUI() {
+        add_acounts_btn.setVisible(isLoggedIn);
+        login_bttn.setText(isLoggedIn ? "Log out" : "Log in/Sign up");
     }
 
     @FXML
-    public void handleMouseExit(MouseEvent event) {
-        clickableLabel.setStyle("-fx-text-fill: black; -fx-underline: false;");
-        clickableLabel.setCursor(Cursor.DEFAULT);
+    void howlongtobeat(ActionEvent event) {
+        // Implement the logic for the HowLongToBeat button
     }
 
     @FXML
-    void login(ActionEvent event) {
-        String user = username.getText();
-        String pass = password.getText();
-
-        String id = idget.getText();
-        if (user.isEmpty() || pass.isEmpty()|| id.isEmpty()) {
-
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText(null);
-            alert.setContentText("All fields are mandatory!");
-            alert.showAndWait();
-            return;
-        }
-        if (!id.matches("\\d{17}") || !id.startsWith("7656119")) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText(null);
-            alert.setContentText("Write it in a valid SteamID format");
-            alert.showAndWait();
-            return;
-        }
-
-
-        BlFacadeImplementation bl = BlFacadeImplementation.getInstance();
-       // bl.open();
-        User loggedInUser = bl.login(user, pass, id);
-       // bl.close();
-        if (loggedInUser != null) {
-            steamUsername=user;
-            //steampassword=pass;
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Success");
-            alert.setHeaderText(null);
-            alert.setContentText("Login successful");
-            alert.showAndWait();
-
-        } else {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText(null);
-            alert.setContentText("Invalid credentials. Please try again");
-            alert.showAndWait();
-        }
+    void recommend_games(ActionEvent event) {
+        // Implement the logic for the Recommend Games button
     }
 
     @FXML
-    void signup(ActionEvent event) {
-
-        String user = username.getText();
-        String pass = password.getText();
-        String id = idget.getText();
-
-        if (user.isEmpty() || pass.isEmpty() || id.isEmpty()) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText(null);
-            alert.setContentText("All fields are mandatory!");
-            alert.showAndWait();
-            return;
-        }
-        if (!id.matches("\\d{17}") || !id.startsWith("7656119")) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText(null);
-            alert.setContentText("Write it in a valid SteamID format");
-            alert.showAndWait();
-            return;
-        }
-
-        BlFacadeImplementation bl = BlFacadeImplementation.getInstance();
-
-        if (!bl.userExists(user)) {
-            bl.signUp(user, pass, id);
-
-            User loggedInUser = bl.login(user, pass, id);
-
-            if (loggedInUser != null) {
-                steamUsername = user;
-                //steampassword=pass;
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Success");
-                alert.setHeaderText(null);
-                alert.setContentText("Signup successful");
-                alert.showAndWait();
-            } else {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Error");
-                alert.setHeaderText(null);
-                alert.setContentText("Signup failed. Please try again");
-                alert.showAndWait();
-            }
-        } else {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText(null);
-            alert.setContentText("User already exists");
-            alert.showAndWait();
-        }
+    void add_acounts(ActionEvent event) {
+        // Implement the logic for the Add Accounts button
     }
-
-    @FXML
-    void logOut(ActionEvent event) {
-        steamUsername=null;
-        //steampassword=null;
-    }
-
-
 }
