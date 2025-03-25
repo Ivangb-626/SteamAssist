@@ -19,7 +19,7 @@ public class LoginUI extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(LoginUI.class.getResource("login.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
-        stage.setTitle("Login");
+        stage.setTitle("SteamAssist-Login");
         stage.show();
 
     }

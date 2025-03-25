@@ -7,11 +7,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
-import org.h2.tools.Server;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.Cursor;
 
 public class MainController {
 
@@ -19,24 +19,63 @@ public class MainController {
     private PasswordField password;
 
     @FXML
-    private ComboBox<String> roleComboBox;
+    private TextField username;
 
     @FXML
-    private TextField username;
-    private BlFacadeImplementation bl;
-    private static String LoginID;
+    private TextField idget;
+    @FXML
+    private Label clickableLabel;
+    @FXML
+    private TextField passwordTextField;
+
+
 
     @FXML
     public void initialize() {
-        bl = BlFacadeImplementation.getInstance();
+
+    }
+    @FXML
+    public void togglePasswordVisibility(ActionEvent event) {
+        if (password.isVisible()) {
+            passwordTextField.setText(password.getText());
+            password.setVisible(false);
+            passwordTextField.setVisible(true);
+        } else {
+            password.setText(passwordTextField.getText());
+            passwordTextField.setVisible(false);
+            password.setVisible(true);
+        }
+    }
+    @FXML
+    public void handleLabelClick(MouseEvent event) {
+        String url = clickableLabel.getText();
+        try {
+            java.awt.Desktop.getDesktop().browse(new java.net.URI(url));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    public void handleMouseEnter(MouseEvent event) {
+        clickableLabel.setStyle("-fx-text-fill: blue; -fx-underline: true;");
+        clickableLabel.setCursor(Cursor.HAND);
+    @FXML
+    public void initialize() {
     }
 
+    @FXML
+    public void handleMouseExit(MouseEvent event) {
+        clickableLabel.setStyle("-fx-text-fill: black; -fx-underline: false;");
+        clickableLabel.setCursor(Cursor.DEFAULT);
+    }
     @FXML
     void login(ActionEvent event) {
         String user = username.getText();
         String pass = password.getText();
 
-        if (user.isEmpty() || pass.isEmpty()) {
+        String id = idget.getText();
+        if (user.isEmpty() || pass.isEmpty()|| id.isEmpty()) {
+
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText(null);
@@ -44,10 +83,19 @@ public class MainController {
             alert.showAndWait();
             return;
         }
+        if (!id.matches("\\d{17}") || !id.startsWith("7656119")) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Write it in a valid SteamID format");
+            alert.showAndWait();
+            return;
+        }
+
 
         BlFacadeImplementation bl = BlFacadeImplementation.getInstance();
        // bl.open();
-        User loggedInUser = bl.login(user, pass);
+        User loggedInUser = bl.login(user, pass, id);
        // bl.close();
         if (loggedInUser != null) {
             LoginID=user;
@@ -71,8 +119,9 @@ public class MainController {
 
         String user = username.getText();
         String pass = password.getText();
+        String id = idget.getText();
 
-        if (user.isEmpty() || pass.isEmpty()) {
+        if (user.isEmpty() || pass.isEmpty() || id.isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText(null);
@@ -80,12 +129,21 @@ public class MainController {
             alert.showAndWait();
             return;
         }
+        if (!id.matches("\\d{17}") || !id.startsWith("7656119")) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Write it in a valid SteamID format");
+            alert.showAndWait();
+            return;
+        }
 
         BlFacadeImplementation bl = BlFacadeImplementation.getInstance();
 
-        bl.signUp(user, pass);
 
-        User loggedInUser = bl.login(user, pass);
+        bl.signUp(user, pass, id);
+
+        User loggedInUser = bl.login(user, pass, id);
 
         if (loggedInUser != null) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
