@@ -29,7 +29,8 @@ public class MainController {
     @FXML
     private TextField passwordTextField;
 
-    private static String LoginID;
+    private static String steamUsername;
+    //private static String steampassword;
 
     @FXML
     public void initialize() {
@@ -100,7 +101,8 @@ public class MainController {
         User loggedInUser = bl.login(user, pass, id);
        // bl.close();
         if (loggedInUser != null) {
-            LoginID=user;
+            steamUsername=user;
+            //steampassword=pass;
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Success");
             alert.setHeaderText(null);
@@ -148,6 +150,8 @@ public class MainController {
         User loggedInUser = bl.login(user, pass, id);
 
         if (loggedInUser != null) {
+            steamUsername=user;
+            //steampassword=pass;
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Success");
             alert.setHeaderText(null);
@@ -164,7 +168,8 @@ public class MainController {
 
     @FXML
     void logOut(ActionEvent event) {
-        LoginID=null;
+        steamUsername=null;
+        //steampassword=null;
     }
 
 
