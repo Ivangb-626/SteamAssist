@@ -10,6 +10,7 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
+import java.sql.*;
 
 /**
  * Implements the Data Access utility to the objectDb database
@@ -57,7 +58,7 @@ public class DataAccess {
           StandardServiceRegistryBuilder.destroy(registry);
         }
       }
-
+      
       // Only create a new EntityManager if it doesn't exist or is closed
       if (db == null || !db.isOpen()) {
         db = emf.createEntityManager();
@@ -67,7 +68,50 @@ public class DataAccess {
   }
 
 
+  public User findUserByUsername(String username) {
+    try {
+      Connection connection = getConnection();
+      String query = "SELECT * FROM users WHERE username = ?";
+      PreparedStatement statement = connection.prepareStatement(query);
+      statement.setString(1, username);
+      ResultSet resultSet = statement.executeQuery();
+      if (resultSet.next()) {
+        // Assuming User has a constructor that takes ResultSet
+        return new User(resultSet);
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+    return null;
+  }
+  public boolean saveUser(User user) {
+    try {
+      Connection connection = getConnection();
+      String query = "UPDATE users SET password = ? WHERE username = ?";
+      PreparedStatement statement = connection.prepareStatement(query);
+      statement.setString(1, user.getPassword());
+      statement.setString(2, user.getUserName());
+      int rowsUpdated = statement.executeUpdate();
+      return rowsUpdated > 0;
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+    return false;
+  }
 
+  private Connection getConnection() {
+    // Implement your logic to get a database connection
+    Connection connection = null;
+    try {
+      // Load the JDBC driver
+      Class.forName("com.mysql.cj.jdbc.Driver");
+      // Establish the connection
+      connection = DriverManager.getConnection("jdbc:h2", "your_username", "your_password");
+    } catch (ClassNotFoundException | SQLException e) {
+      e.printStackTrace();
+    }
+    return connection;
+  }
   public void reset() {
     db.getTransaction().begin();
   db.createQuery("DELETE FROM User").executeUpdate();
@@ -100,15 +144,29 @@ public class DataAccess {
       db.getTransaction().begin();
 
       // Create test users with different roles
-      User admin = new User("admin", "admin");
+      User teacher1 = new User("john.smith", "pass123");
+      User teacher2 = new User("mary.jones", "pass456");
+
+      User student1 = new User("alex.brown", "student123");
+      User student2 = new User("sarah.wilson", "student456");
+      User student3 = new User("mike.davis", "student789");
+
+      User admin1 = new User("admin.main", "admin123");
+      User admin2 = new User("jane.doe", "admin456");
+
       // Persist all users
-      db.persist(admin);
+      db.persist(teacher1);
+      db.persist(teacher2);
+      db.persist(student1);
+      db.persist(student2);
+      db.persist(student3);
+      db.persist(admin1);
+      db.persist(admin2);
 
       db.getTransaction().commit();
       System.out.println("The database has been initialized");
     } catch (Exception e) {
       e.printStackTrace();
-
     }
   }
 
