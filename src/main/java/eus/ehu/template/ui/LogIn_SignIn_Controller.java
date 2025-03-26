@@ -150,7 +150,7 @@ public class LogIn_SignIn_Controller {
             }
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
+            alert.setTitle("Error!");
             alert.setHeaderText(null);
             alert.setContentText("User already exists");
             alert.showAndWait();
